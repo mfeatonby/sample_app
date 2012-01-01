@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= title %></title>
+    <head>
+        <title><%= title %></title>
+      
+        <%= csrf_meta_tags %>
   
-  <%= csrf_meta_tags %>
+        <%= render 'layouts/stylesheet' %>
 
-  <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
-  <%= stylesheet_link_tag 'blueprint/print', :media => 'print' %>
+    </head>
+    <body>
+        <div class="container">
 
-</head>
-<body>
-    <%= yield %>
-</body>
+            <%= render 'pages/header' %>
+            
+            <section class="round">
+                <%= yield %>
+            </section>
+        
+            <%= render 'pages/footer' %>
+
+        </div>
+
+    </body>
 </html>
