@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe UserController do
+describe UsersController do
 
   describe "GET 'new'" do
     it "should be successful" do
