@@ -21,5 +21,31 @@ describe "LayoutLinks" do
       get '/help'
       response.should have_selector('title', :content => "Help")
   end
+  
+  it "should have a Signup page at '/signup'" do
+      get '/signup'
+      response.should have_selector('title', :content => "Sign Up")
+  end
+
+  it "should be possible to navigate through the footer links" do
+      visit root_path
+      click_link "About"
+      response.should have_selector('title', :content => "About")
+      click_link "Contact"
+      response.should have_selector('title', :content => "Contact")
+  end
+
+  it "should be possible to navigate through the header links" do
+      visit root_path
+      click_link "Home" 
+      response.should have_selector('title', :content => "Home")
+      click_link "Help"
+  end
+
+  it "should be possible to navigate to the sign up page from the home page" do
+      visit root_path
+      click_link "Sign up now!"
+      response.should have_selector('title', :content => "Sign Up")
+  end
 
 end
