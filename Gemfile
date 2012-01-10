@@ -8,15 +8,26 @@ gem 'rails', '3.1.3'
 gem 'sqlite3'
 
 #
-# Jaca script engine
+# Java script engine
 #
 gem 'execjs'
 gem 'therubyracer'
 
+#
+# Adds the gravatar_image_tag function to the rails stack
+#
+gem 'gravatar_image_tag'
+
+#
+# Development environment gems
+#
 group :development do
     gem 'rspec-rails', '2.6.1'
 end
 
+#
+# Test environment gems
+#
 group :test do
     gem 'rspec-rails', '2.6.1'
     gem 'webrat', '0.7.1'
@@ -31,6 +42,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,28 +1,4 @@
-# Logfile created on 2012-01-01 18:28:30 +0200 by logger.rb/25413
-REQUESTING PAGE: GET / with {} and HTTP headers {}
-REQUESTING PAGE: GET /about with {} and HTTP headers {"HTTP_REFERER"=>"/"}
-REQUESTING PAGE: GET /contact with {} and HTTP headers {"HTTP_REFERER"=>"/about"}
-REQUESTING PAGE: GET / with {} and HTTP headers {}
-REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"/"}
-REQUESTING PAGE: GET /help with {} and HTTP headers {"HTTP_REFERER"=>"/"}
-REQUESTING PAGE: GET / with {} and HTTP headers {}
-REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
-REQUESTING PAGE: GET / with {} and HTTP headers {}
-REQUESTING PAGE: GET /about with {} and HTTP headers {"HTTP_REFERER"=>"/"}
-REQUESTING PAGE: GET /contact with {} and HTTP headers {"HTTP_REFERER"=>"/about"}
-REQUESTING PAGE: GET / with {} and HTTP headers {}
-REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"/"}
-REQUESTING PAGE: GET /help with {} and HTTP headers {"HTTP_REFERER"=>"/"}
-REQUESTING PAGE: GET / with {} and HTTP headers {}
-REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
-REQUESTING PAGE: GET / with {} and HTTP headers {}
-REQUESTING PAGE: GET /about with {} and HTTP headers {"HTTP_REFERER"=>"/"}
-REQUESTING PAGE: GET /contact with {} and HTTP headers {"HTTP_REFERER"=>"/about"}
-REQUESTING PAGE: GET / with {} and HTTP headers {}
-REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"/"}
-REQUESTING PAGE: GET /help with {} and HTTP headers {"HTTP_REFERER"=>"/"}
-REQUESTING PAGE: GET / with {} and HTTP headers {}
-REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+# Logfile created on 2012-01-10 12:19:17 +0200 by logger.rb/25413
 REQUESTING PAGE: GET / with {} and HTTP headers {}
 REQUESTING PAGE: GET /about with {} and HTTP headers {"HTTP_REFERER"=>"/"}
 REQUESTING PAGE: GET /contact with {} and HTTP headers {"HTTP_REFERER"=>"/about"}

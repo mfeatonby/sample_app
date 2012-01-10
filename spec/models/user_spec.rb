@@ -98,5 +98,14 @@ describe "Password Validation" do
     user.has_password?("invalid").should be_false
   end
 
+  it "User should authenticate for a valid email and password" do
+    user = User.create!(@attr)
+    User.authenticate("user@example.com", "password").should == user 
+  end
+
+  it "User authentication should fail if email and password dont match" do
+    user = User.create!(@attr)
+    User.authenticate("user@example.com", "invalid").should be_nil
+  end
 
 end
