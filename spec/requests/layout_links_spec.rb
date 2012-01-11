@@ -48,4 +48,25 @@ describe "LayoutLinks" do
       response.should have_selector('title', :content => "Sign Up")
   end
 
+  it "should have a profile link if signed in" do
+     user = User.create!(:name => "somename", :email => "someemail@address.org", :password => "password", :password_confirmation => "password")
+     User.stub!(:find, user.id).and_return(user)
+     User.stub!(:find_by_email, user.email).and_return(user)
+
+     visit signin_path 
+
+     fill_in :email , :with => user.email
+     fill_in :password, :with => user.password
+     click_button
+
+     controller.should be_signed_in
+     controller.current_user.should == user
+
+     click_link "Sign Out"
+
+     controller.signed_in?.should be_false
+     controller.current_user.should be_nil 
+
+  end
+
 end

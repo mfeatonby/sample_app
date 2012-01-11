@@ -91,6 +91,14 @@ describe UsersController do
           response.should redirect_to(user_path(assigns[:user]))
           flash[:success] =~ /elcome to the Sample/i
       end
+
+      it "newly created users should be automatically signed in" do
+          lambda do
+              post :create, :user => @attr
+          end.should change(User, :count).by(1)
+          controller.signed_in?.should be_true
+      end
+
     end
   end
 
