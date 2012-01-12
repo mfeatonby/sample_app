@@ -24,4 +24,17 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+
+  # Utility methods to help with testing
+  def test_sign_in
+      @user = User.create!(:name => "Malcolm", :email => "email@example.com", :password => "password", :password_confirmation => "password")
+      User.stub!(:find, @user.id).and_return(@user)
+      User.stub!(:find_by_email, @user.email).and_return(@user)
+
+      visit signin_path
+      fill_in :email,    :with => @user.email
+      fill_in :password, :with => @user.password
+      click_button
+  end
+
 end

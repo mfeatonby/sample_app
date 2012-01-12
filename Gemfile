@@ -19,10 +19,17 @@ gem 'therubyracer'
 gem 'gravatar_image_tag'
 
 #
+# Add support for pagination
+#
+gem 'will_paginate', '~> 3.0.2'
+
+#
 # Development environment gems
 #
 group :development do
     gem 'rspec-rails', '2.6.1'
+    gem 'annotate', '2.4.0'
+    gem 'faker', '0.3.1'
 end
 
 #

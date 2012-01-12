@@ -4,12 +4,6 @@ describe "Users" do
 
   describe "GET /users" do
 
-    it "should return a valid page" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get users_path
-      response.status.should be(200)
-    end
-
     it "should be able to capture a valid user" do
       visit signup_path
       fill_in "Name", :with => "TestName"

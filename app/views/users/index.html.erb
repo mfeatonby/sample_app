@@ -1,3 +1,7 @@
-<% @users.each do |user|%>
-    <br><b>Name: </b><%= user.name %> <b>Email: </b><%= user.email %>
-<% end %>
+<%= will_paginate %>
+
+<ul class="users">
+    <%= render @users %>
+</ul>
+
+<%= will_paginate %>

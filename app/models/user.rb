@@ -39,10 +39,6 @@ class User < ActiveRecord::Base
         self.encrypted_password == encrypt(a_password)
     end
 
-    def gravatar
-       "Gravatar goes here"
-    end
-
     private
 
     #Active record callback method for encrypting the password on save.

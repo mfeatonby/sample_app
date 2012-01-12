@@ -108,4 +108,24 @@ describe "Password Validation" do
     User.authenticate("user@example.com", "invalid").should be_nil
   end
 
+  describe "administrative users" do
+
+      it "should response to admin?" do
+          user = User.create!(@attr)
+          user.should respond_to(:admin)
+      end
+
+      it "should not be an admin by default" do
+          user = User.create!(@attr)
+          user.should_not be_admin 
+      end
+
+      it "should be able to become admin" do
+          user = User.create!(@attr)
+          user.toggle!(:admin)
+          user.should be_admin 
+      end
+
+  end
+
 end

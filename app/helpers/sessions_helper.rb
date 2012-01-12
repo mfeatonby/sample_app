@@ -14,12 +14,25 @@ module SessionsHelper
     self.current_user = nil
   end
 
+  def deny_access
+      store_requested_location
+      redirect_to signin_path, :notice => "Please sign in"
+  end
+
+  def current_user?(user)
+    @current_user.id == user.id
+  end
+
   def current_user=(user)
     @current_user = user
   end
 
   def current_user
       @current_user ||= user_from_remember_token
+  end
+
+  def redirect_back_or(default)
+     redirect_to(retrieve_requested_location || default)
   end
 
   private
@@ -30,6 +43,16 @@ module SessionsHelper
 
   def remember_token
       cookies.signed[:remember_token] || [nil, nil]
+  end
+
+  def store_requested_location
+      session[:requested_location] = request.fullpath
+  end
+
+  def retrieve_requested_location
+      path = session[:requested_location]
+      session[:requested_location] = nil
+      return path
   end
 
 end
