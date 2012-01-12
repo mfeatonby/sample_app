@@ -2,6 +2,9 @@ require 'digest'
 
 class User < ActiveRecord::Base
 
+    #
+    # User attributes
+    # 
     email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i 
 
     attr_accessor :password
@@ -20,6 +23,14 @@ class User < ActiveRecord::Base
 
     before_save :encrypt_password
 
+    #
+    # Microposts
+    #
+    has_many :microposts, :dependent => :destroy
+  
+    #
+    # Class methods
+    #
     def self.authenticate(email, password)
       user = User.find_by_email(email)
       if user == nil || !user.has_password?(password)
