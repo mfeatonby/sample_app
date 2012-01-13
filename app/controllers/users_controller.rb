@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_filter :authenticate, :only => [:update, :edit, :index, :destroy]
+  before_filter :authenticate, :except => [:show, :new, :create] 
   before_filter :correct_user, :only => [:update, :edit]
   before_filter :admin_only, :only => [:destroy]
 
@@ -69,6 +69,20 @@ class UsersController < ApplicationController
           flash[:success] = "User #{@user.name} deleted !"
           redirect_to users_path
       end
+  end
+
+  def followers
+    @user = User.find(params[:id])
+    @title = "Followers of #{@user.name}"
+    @users = @user.followers.paginate(:page => params[:page])
+    render 'show_follow'
+  end
+
+  def following
+    @user = User.find(params[:id])
+    @title = "#{@user.name} follows"
+    @users = @user.following.paginate(:page => params[:page])
+    render 'show_follow'
   end
 
 end

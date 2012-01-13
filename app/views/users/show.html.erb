@@ -6,6 +6,8 @@
                 <%= @user.name %>
             </h1>
 
+            <%= render 'follow_form' if signed_in? %>
+
             <% unless @user.microposts.empty? %>
                 <table class="microposts" summary="User microposts">
                     <%= render @microposts %>
