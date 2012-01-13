@@ -50,6 +50,11 @@ class User < ActiveRecord::Base
         self.encrypted_password == encrypt(a_password)
     end
 
+    # Returns the micropost feed for this user
+    def feed
+        Micropost.where("user_id = ?", id) 
+    end
+
     private
 
     #Active record callback method for encrypting the password on save.

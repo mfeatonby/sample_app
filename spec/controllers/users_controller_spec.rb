@@ -18,6 +18,7 @@ describe UsersController do
     before(:each) do
       @user = User.create!(:name => "Malcolm", :email => "email@example.com", :password => "password", :password_confirmation => "password")
       User.stub!(:find, @user.id).and_return(@user)
+      controller.sign_in(@user)
     end
 
     it "should be successful" do

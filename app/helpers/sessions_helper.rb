@@ -1,5 +1,9 @@
 module SessionsHelper
 
+  def authenticate
+      deny_access unless signed_in?
+  end
+
   def signed_in?
     !current_user.nil?
   end
@@ -20,7 +24,7 @@ module SessionsHelper
   end
 
   def current_user?(user)
-    @current_user.id == user.id
+     self.current_user.id == user.id
   end
 
   def current_user=(user)
