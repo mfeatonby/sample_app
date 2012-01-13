@@ -9,7 +9,7 @@ class MicropostsController < ApplicationController
           flash[:success] = "New post created!"
           redirect_to root_path
       else
-          @feed_items = current_user.feed.paginate(:page => params[:page]) 
+          @feed_items = current_user.feed.paginate(:page => params[:page], :per_page => 5) 
           render 'pages/home'
       end
   end
